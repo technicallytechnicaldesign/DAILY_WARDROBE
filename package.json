@@ -1,0 +1,8 @@
+{
+  "name": "daily-wardrobe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A tagged wardrobe database and style-filtered outfit flipbook",
+  "scripts": { "dev": "node serve.mjs", "check": "node --check app.js && node --check catalog.js && node --check serve.mjs" }
+}

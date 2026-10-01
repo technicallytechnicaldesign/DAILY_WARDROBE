@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0c0c">
+  <meta name="description" content="A tagged wardrobe database and style-filtered outfit flipbook.">
+  <title>DAILY WARDROBE</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css?v=3">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to wardrobe</a>
+  <header class="masthead">
+    <a href="#wardrobe" class="wordmark" aria-label="Daily Wardrobe">DAILY<span>&#9679;</span>WARDROBE</a>
+    <span class="edition">TAGGED CLOSET / PICK A VIBE, GET AN OUTFIT</span>
+    <nav aria-label="Main"><a href="#wardrobe" data-route="wardrobe">Wardrobe <sup id="wardrobe-count"></sup></a><a href="#flipbook" data-route="flipbook">Flipbook <span aria-hidden="true">&#8599;</span></a></nav>
+  </header>
+  <div class="filter-bar" aria-label="Style and colour filters">
+    <div class="filter-row">
+      <span class="filter-label">Style</span>
+      <div id="style-filters" class="chip-row" role="group" aria-label="Filter by style"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Colour</span>
+      <div id="color-filters" class="chip-row" role="group" aria-label="Filter by colour"></div>
+    </div>
+  </div>
+  <main id="main">
+    <section id="wardrobe" aria-labelledby="wardrobe-title">
+      <div class="intro"><h1 id="wardrobe-title">PICK A<br><span>PIECE.</span></h1><div class="intro-side"><p>Everything you own, tagged by colour and vibe.<br>Choose one to wear it and jump to the flipbook.</p><a href="#flipbook" class="round-link" aria-label="Open outfit flipbook">&#8599;</a></div></div>
+      <div class="wardrobe-meta"><span id="wardrobe-summary"></span><span class="filter-hint">TAP A FILTER TO NARROW THE RAIL</span></div>
+      <div id="wardrobe-grid" class="wardrobe-grid"></div>
+      <p id="wardrobe-empty" class="empty-state" hidden>Nothing tagged for this combination yet. Try a different colour or style, or add pieces in <code>catalog.js</code>.</p>
+      <div class="wardrobe-end"><span>BUILD THE LOOK.</span><a href="#flipbook">Enter the flipbook &#8599;</a></div>
+    </section>
+    <section id="flipbook" hidden aria-labelledby="flipbook-title">
+      <div class="flip-intro"><div><p class="eyebrow">THE FLIPBOOK</p><h1 id="flipbook-title">TODAY'S<br><span>OUTFIT.</span></h1><p class="flip-note">Five parts.<br>Flip each one until it fits the day.</p></div><div class="look-stamp"><span>COMBOS</span><strong id="look-count">0</strong><span id="look-scope">POSSIBLE RIGHT NOW</span></div></div>
+      <div class="fitting-room"><div class="stage-top"><span>MOOD / <b id="specimen">...</b></span><span>&#8596; FLIP EACH ROW</span></div><div id="figure" class="figure"></div></div>
+      <aside class="outfit-panel"><div class="outfit-heading"><h2>THE OUTFIT</h2><span id="outfit-count">0 / 5</span></div><div id="outfit-controls"></div><button id="shuffle" class="shuffle"><span>SHUFFLE THE LOOK</span><span aria-hidden="true">&#10664;</span></button><p class="shuffle-note">Shuffles within your current filters.</p><a href="#wardrobe" class="back-link">&#8601; Back to the wardrobe</a></aside>
+    </section>
+  </main>
+  <footer><span>DAILY WARDROBE</span><span id="footer-count"></span><span>SELF-HOSTED, YOURS TO EDIT.</span></footer>
+  <div id="announce" class="sr-only" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js?v=2"></script>
+</body>
+</html>
